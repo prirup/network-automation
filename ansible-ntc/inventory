@@ -1,0 +1,4 @@
+[iosxe]
+csr1 ansible_network_os=ios
+csr2 ansible_network_os=ios
+csr3 ansible_network_os=ios
