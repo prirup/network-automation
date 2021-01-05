@@ -1,4 +1,34 @@
+[all:vars]
+ntc_device_type=unknown
+
+[AMER:children]
+iosxe
+
+[EMEA:children]
+nxos
+
 [iosxe]
-csr1 ansible_network_os=ios
-csr2 ansible_network_os=ios
-csr3 ansible_network_os=ios
+csr1  ntc_device_type=csr1000v-ng
+csr2 
+csr3 
+
+[nxos]
+nxos-spine1 ntc_device_type=n9k
+nxos-spine2 
+
+[iosxe:vars]
+ansible_network_os=ios
+ansible_user=automation 
+ansible_ssh_pass=ansible
+ntc_api=ssh
+ntc_vendor=cisco
+ntc_device_type=csr1000
+
+[nxos:vars]
+ansible_network_os=nxos 
+ansible_user=automation 
+ansible_ssh_pass=Ansible123
+ntc_api=nxapi
+ntc_vendor=cisco
+ntc_device_type=n7kv
+

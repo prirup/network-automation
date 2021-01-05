@@ -1,0 +1,22 @@
+---
+  - name: USING THE DEBUG MODULE
+    hosts: csr1
+    connection: local
+    gather_facts: no
+
+    tasks:
+      # - name: DEBUG AND PRINT TO TERMINAL
+      #   debug: var=ntc_vendor
+
+      # - name: DEBUG AND PRINT DEVICE TYPE TO TERMINAL
+      #   debug: 
+      #     var: ntc_device_type
+
+      # - name: DEBUG AND PRINT THE OS
+      #   debug: 
+      #     msg: "The OS for {{ inventory_hostname }} is {{ ansible_network_os }}"
+
+      - name: DEBUG AND PRINT THE OS
+        debug: 
+          #msg: ansible_host- {{ ansible_host }} && version - {{ ansible_version["full"] }} && {{ inventory_hostname }} && {{ ansible_user }} {{ snmp_config }}
+

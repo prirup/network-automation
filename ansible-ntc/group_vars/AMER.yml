@@ -1,0 +1,9 @@
+snmp_config:
+  ro:
+    - public
+    - ansible-ro
+  rw:
+    - private
+    - ansible-rw
+  contact: network_team
+  location: SJC

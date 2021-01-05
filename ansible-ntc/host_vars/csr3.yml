@@ -1,0 +1,8 @@
+snmp_config:
+  ro:
+    - ansible-ro-one-off
+  rw:
+    - private
+    - ansible-rw-one-off
+  contact: netops_team
+  location: SJC

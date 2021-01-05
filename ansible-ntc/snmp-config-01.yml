@@ -1,0 +1,30 @@
+---
+
+  - name: PLAY 1 - DEPLOYING SNMP CONFIGURATIONS ON IOS
+    hosts: iosxe
+    connection: network_cli
+    gather_facts: no
+
+    tasks:
+
+      - name: TASK 1 in PLAY 1 - ENSURE SNMP COMMANDS EXIST ON IOS DEVICES
+        ios_config:
+          commands:
+            - snmp-server community ntc-course RO
+            - snmp-server location SJC
+            - snmp-server contact NETWORK-TEAM
+          
+  - name: PLAY 2 - DEPLOYING SNMP CONFIGURATIONS ON NXOS
+    hosts: nxos
+    connection: network_cli
+    gather_facts: no
+
+    tasks:
+
+      - name: TASK 1 in PLAY 2 - ENSURE SNMP COMMANDS EXIST ON NXOS DEVICES
+        nxos_config:
+          commands:
+            - snmp-server community ntc-course RO
+            - snmp-server location SJC
+            - snmp-server contact NETWORK-TEAM
+  

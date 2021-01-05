@@ -1,0 +1,30 @@
+---
+- name: COLLECT USERNAME AND PASSWORD
+  hosts: iosxe
+  connection: local
+  gather_facts: no
+
+  vars_prompt:
+    - name: un
+      prompt: "Please enter the username"
+      private: no
+      default: automation
+      
+    - name: pwd
+      prompt: "Please enter the password"
+      private: yes
+
+  tasks:
+    - name: DEBUG AND PRINT TO TERMINAL
+      debug: var=ntc_vendor
+
+    - name: DEBUG AND PRINT DEVICE TYPE TO TERMINAL
+      debug: var=ntc_device_type
+
+    - name: DEBUG AND PRINT THE OS
+      debug: msg="The OS for {{ inventory_hostname }} is {{ ansible_network_os }}."
+
+    - name: DISPLAY THE USERNAME AND PASSWORD
+      debug:
+        msg: "The Username is {{ un }} and password is {{ pwd }}"
+
