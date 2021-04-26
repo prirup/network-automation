@@ -2,6 +2,7 @@
 
 - hosts: acc-1
   gather_facts: False
+  
   tasks:
   - name: Read in parse_genie role
 	include_role:
