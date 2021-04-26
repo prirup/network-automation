@@ -1,6 +1,6 @@
 ---
 
-- hosts: acc-1
+- hosts: ACC-1
   gather_facts: False
   
   tasks:
