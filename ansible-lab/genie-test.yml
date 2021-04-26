@@ -16,3 +16,4 @@
 	debug:
 	  msg: "{{ arp_output['stdout'][0] | parse_genie(command='show arp vrf Mgmt-intf', os='iosxe') }}"
 	delegate_to: localhost
+
