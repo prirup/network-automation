@@ -5,16 +5,16 @@
   
   tasks:
   - name: Read in parse_genie role
-	include_role:
-	  name: clay584.parse_genie
+    include_role:
+      name: clay584.parse_genie
 
   - name: Get Data From Device
-	ios_command:
-	  commands: show arp vrf Mgmt-intf
-	register: arp_output
+		ios_command:
+	  	commands: show arp vrf Mgmt-intf
+		register: arp_output
 
   - name: Print Structured Data
-	debug:
-	  msg: "{{ arp_output['stdout'][0] | parse_genie(command='show arp vrf Mgmt-intf', os='iosxe') }}"
-	delegate_to: localhost
+		debug:
+	  	msg: "{{ arp_output['stdout'][0] | parse_genie(command='show arp vrf Mgmt-intf', os='iosxe') }}"
+		delegate_to: localhost
 
