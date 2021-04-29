@@ -10,7 +10,7 @@
 
   - name: Get Data From Device
     ios_command:
-      commands: show arp vrf Mgmt-intf
+      commands: show ip arp
     register: arp_output
 
   - name: Print Structured Data
